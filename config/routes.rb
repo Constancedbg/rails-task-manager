@@ -7,4 +7,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get 'tasks', to: 'tasks#tasks'
+  get 'tasks/new', to: 'tasks#new', as: :new_task
+  post 'tasks', to: 'tasks#create'
+  get 'tasks/:id', to: 'tasks#show', as: :task
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit
+  patch 'tasks/:id', to: 'tasks#update'
+  delete 'tasks/:id', to: 'tasks#destroy'
 end
+
+# je veux générer un lien pour aller sur une route en particulier
+# link_to
+# prefix_path
